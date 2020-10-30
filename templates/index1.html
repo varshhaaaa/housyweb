@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html>
+<head><title>@HousyWeb</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing: border-box}
+body {font-family: Verdana, sans-serif; margin:0;  background: linear-gradient(
+    to bottom,
+    #8B0000,
+    black
+  );}
+.mySlides {display: none}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px;}
+}
+.text{color:yellow;font-size:21px;font-family:Snell Roundhand, cursive;}
+</style>
+</head>
+<body>
+<h1 style="text-align:center;color:white;font-family:Trattatello, fantasy"><br/>With Us, Plan Your Home Today <br/><br/> @HousyWeb!</h1>
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 3</div>
+  <img src="https://github.com/srhsoumya/proj_images/raw/main/b1.jpg" style="width:100%">
+  <div class="text">Festivals</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 3</div>
+  <img src="https://github.com/srhsoumya/proj_images/raw/main/b2.jpg" style="width:100%">
+  <div class="text">Main city</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 3</div>
+  <img src="https://github.com/srhsoumya/proj_images/raw/main/b3.jpg" style="width:100%">
+  <div class="text">Banglore</div>
+</div>
+
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+</div>
+
+<form   action="{{url_for('predictB')}}" method="POST" style="width:70%;background-color:transparent;margin:auto;color:white;text-align:center;"><h1 style="text-align:center;">Predict To Plan</h1>
+ BHK <input type="text" name="bhk"/><br/><br/>
+ Area <input type="text" name="area"/><br/><br/>
+ Bath <input type="text" name="bath"/><br/><br/>
+ location <select name="loc"><option> Devarachikkanahalli</option>
+<option>1st Block Jayanagar</option>
+<option>1st Phase JP Nagar</option>
+<option>2nd Phase Judicial Layout</option>
+<option>2nd Stage Nagarbhavi</option>
+<option>5th Phase JP Nagar</option>
+<option>6th Phase JP Nagar</option>
+<option>7th Phase JP Nagar</option>
+<option>8th Phase JP Nagar</option>
+<option>9th Phase JP Nagar</option>
+<option>AECS Layout</option>
+<option>Abbigere</option>
+<option>Akshaya Nagar</option>
+<option>Ambalipura</option>
+<option>Ambedkar Nagar</option>
+<option>Amruthahalli</option>
+<option>Anandapura</option>
+<option>Ananth Nagar</option>
+<option>Anekal</option>
+<option>Anjanapura</option>
+<option>Ardendale</option>
+<option>Arekere</option>
+<option>Attibele</option>
+<option>BEML Layout</option>
+<option>BTM 2nd Stage</option>
+<option>BTM Layout</option>
+<option>Babusapalaya</option>
+<option>Badavala Nagar</option>
+<option>Balagere</option>
+<option>Banashankari</option>
+<option>Banashankari Stage II</option>
+<option>Banashankari Stage III</option>
+<option>Banashankari Stage V</option>
+<option>Banashankari Stage VI</option>
+<option>Banaswadi</option>
+<option>Banjara Layout</option>
+<option>Bannerghatta</option>
+<option>Bannerghatta Road</option>
+<option>Basavangudi</option>
+<option>Basaveshwara Nagar</option>
+<option>Battarahalli</option>
+<option>Begur</option>
+<option>Begur Road</option>
+<option>Bellandur</option>
+<option>Benson Town</option>
+<option>Bharathi Nagar</option>
+<option>Bhoganhalli</option>
+<option>Billekahalli</option>
+<option>Binny Pete</option>
+<option>Bisuvanahalli</option>
+<option>Bommanahalli</option>
+<option>Bommasandra</option>
+<option>Bommasandra Industrial Area</option>
+<option>Bommenahalli</option>
+<option>Brookefield</option>
+<option>Budigere</option>
+<option>CV Raman Nagar</option>
+<option>Chamrajpet</option>
+<option>Chandapura</option>
+<option>Channasandra</option>
+<option>Chikka Tirupathi</option>
+<option>Chikkabanavar</option>
+<option>Chikkalasandra</option>
+<option>Choodasandra</option>
+<option>Cooke Town</option>
+<option>Cox Town</option>
+<option>Cunningham Road</option>
+<option>Dasanapura</option>
+<option>Dasarahalli</option>
+<option>Devanahalli</option>
+<option>Dodda Nekkundi</option>
+<option>Doddaballapur</option>
+<option>Doddakallasandra</option>
+<option>Doddathoguru</option>
+<option>Domlur</option>
+<option>Dommasandra</option>
+<option>EPIP Zone</option>
+<option>Electronic City</option>
+<option>Electronic City Phase II</option>
+<option>Electronics City Phase 1</option>
+<option>Frazer Town</option>
+<option>GM Palaya</option>
+<option>Garudachar Palya</option>
+<option>Giri Nagar</option>
+<option>Gollarapalya Hosahalli</option>
+<option>Gottigere</option>
+<option>Green Glen Layout</option>
+<option>Gubbalala</option>
+<option>Gunjur</option>
+<option>HBR Layout</option>
+<option>HRBR Layout</option>
+<option>HSR Layout</option>
+<option>Haralur Road</option>
+<option>Harlur</option>
+<option>Hebbal</option>
+<option>Hebbal Kempapura</option>
+<option>Hegde Nagar</option>
+<option>Hennur</option>
+<option>Hennur Road</option>
+<option>Hoodi</option>
+<option>Horamavu Agara</option>
+<option>Horamavu Banaswadi</option>
+<option>Hormavu</option>
+<option>Hosa Road</option>
+<option>Hosakerehalli</option>
+<option>Hoskote</option>
+<option>Hosur Road</option>
+<option>Hulimavu</option>
+<option>ISRO Layout</option>
+<option>ITPL</option>
+<option>Iblur Village</option>
+<option>Indira Nagar</option>
+<option>JP Nagar</option>
+<option>Jakkur</option>
+<option>Jalahalli</option>
+<option>Jalahalli East</option>
+<option>Jigani</option>
+<option>Judicial Layout</option>
+<option>KR Puram</option>
+<option>Kadubeesanahalli</option>
+<option>Kadugodi</option>
+<option>Kaggadasapura</option>
+<option>Kaggalipura</option>
+<option>Kaikondrahalli</option>
+<option>Kalena Agrahara</option>
+<option>Kalyan nagar</option>
+<option>Kambipura</option>
+<option>Kammanahalli</option>
+<option>Kammasandra</option>
+<option>Kanakapura</option>
+<option>Kanakpura Road</option>
+<option>Kannamangala</option>
+<option>Karuna Nagar</option>
+<option>Kasavanhalli</option>
+<option>Kasturi Nagar</option>
+<option>Kathriguppe</option>
+<option>Kaval Byrasandra</option>
+<option>Kenchenahalli</option>
+<option>Kengeri</option>
+<option>Kengeri Satellite Town</option>
+<option>Kereguddadahalli</option>
+<option>Kodichikkanahalli</option>
+<option>Kodigehaali</option>
+<option>Kodihalli</option>
+<option>Kogilu</option>
+<option>Konanakunte</option>
+<option>Koramangala</option>
+<option>Kothannur</option>
+<option>Kothanur</option>
+<option>Kudlu</option>
+<option>Kudlu Gate</option>
+<option>Kumaraswami Layout</option>
+<option>Kundalahalli</option>
+<option>LB Shastri Nagar</option>
+<option>Laggere</option>
+<option>Lakshminarayana Pura</option>
+<option>Lingadheeranahalli</option>
+<option>Magadi Road</option>
+<option>Mahadevpura</option>
+<option>Mahalakshmi Layout</option>
+<option>Mallasandra</option>
+<option>Malleshpalya</option>
+<option>Malleshwaram</option>
+<option>Marathahalli</option>
+<option>Margondanahalli</option>
+<option>Marsur</option>
+<option>Mico Layout</option>
+<option>Munnekollal</option>
+<option>Murugeshpalya</option>
+<option>Mysore Road</option>
+<option>NGR Layout</option>
+<option>NRI Layout</option>
+<option>Nagarbhavi</option>
+<option>Nagasandra</option>
+<option>Nagavara</option>
+<option>Nagavarapalya</option>
+<option>Narayanapura</option>
+<option>Neeladri Nagar</option>
+<option>OMBR Layout</option>
+<option>Old Airport Road</option>
+<option>Old Madras Road</option>
+<option>Padmanabhanagar</option>
+<option>Pai Layout</option>
+<option>Panathur</option>
+<option>Parappana Agrahara</option>
+<option>Pattandur Agrahara</option>
+<option>Poorna Pragna Layout</option>
+<option>Prithvi Layout</option>
+<option>R.T. Nagar</option>
+<option>Rachenahalli</option>
+<option>Raja Rajeshwari Nagar</option>
+<option>Rajaji Nagar</option>
+<option>Rajiv Nagar</option>
+<option>Ramagondanahalli</option>
+<option>Ramamurthy Nagar</option>
+<option>Rayasandra</option>
+<option>Sahakara Nagar</option>
+<option>Sanjay nagar</option>
+<option>Sarakki Nagar</option>
+<option>Sarjapur</option>
+<option>Sarjapur  Road</option>
+<option>Sarjapura - Attibele Road</option>
+<option>Sector 2 HSR Layout</option>
+<option>Sector 7 HSR Layout</option>
+<option>Seegehalli</option>
+<option>Shampura</option>
+<option>Shivaji Nagar</option>
+<option>Singasandra</option>
+<option>Somasundara Palya</option>
+<option>Sompura</option>
+<option>Sonnenahalli</option>
+<option>Subramanyapura</option>
+<option>Sultan Palaya</option>
+<option>TC Palaya</option>
+<option>Talaghattapura</option>
+<option>Thanisandra</option>
+<option>Thigalarapalya</option>
+<option>Thubarahalli</option>
+<option>Thyagaraja Nagar</option>
+<option>Tindlu</option>
+<option>Tumkur Road</option>
+<option>Ulsoor</option>
+<option>Uttarahalli</option>
+<option>Varthur</option>
+<option>Varthur Road</option>
+<option>Vasanthapura</option>
+<option>Vidyaranyapura</option>
+<option>Vijayanagar</option>
+<option>Vishveshwarya Layout</option>
+<option>Vishwapriya Layout</option>
+<option>Vittasandra</option>
+<option>Whitefield</option>
+<option>Yelachenahalli</option>
+<option>Yelahanka</option>
+<option>Yelahanka New Town</option>
+<option>Yelenahalli</option>
+<option>Yeshwanthpur</option></select><br/><br/>
+<input type="submit" value="submit" style="background-color:black;color:pink;"/><br/><br/>{{predict_values}}</form>
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+</script>
+
+</body>
+</html>
